@@ -1,0 +1,17 @@
+package personnages;
+
+public class Soldat extends Romain {
+	public enum Grade {
+		SOLDAT,
+		TESSERARIUS,
+		OPTIO,
+		CENTURION
+	}
+	
+	Grade grade;
+	
+	public Soldat (String nom, int force, Grade grade) {
+		super(nom, force);
+		this.grade = grade;
+	}
+}
