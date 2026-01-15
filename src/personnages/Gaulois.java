@@ -1,23 +1,12 @@
 package personnages;
 
-public class Gaulois {
-	private String nom;
-	private int force;
-	
+public class Gaulois extends Personnage {
 	public Gaulois (String nom, int force) {
-		this.nom = nom;
-		this.force = force;
+		super(nom, force);
 	}
-	String getNom () {
-		return nom;
-	}
-	public void parler (String texte) {
-		System.out.println("Le gaulois " + this.nom + 
-				           " : '" + texte + "'");
-	}
-	public void frapper (Romain cible) {
-		System.out.println(this.nom + " envoie un grand coup"
-				+ " dans la mâchoire de " + cible.getNom());
-		cible.recevoirCoup(this.force/3);
+	
+	@Override
+	protected String donnerAuteur() {
+		return "Gaulois ";
 	}
 }
