@@ -1,6 +1,8 @@
 package sites;
 
 import personnages.Gaulois;
+import personnages.Soldat;
+import personnages.Soldat.Grade;
 
 public class Village {
 	private Gaulois chef;
@@ -19,11 +21,22 @@ public class Village {
 	public void ajouterGaulois (Gaulois gaulois) {
 		if (nbGaulois < membres.length) {
 			membres[nbGaulois] = gaulois;
+			this.chef.parler("Bienvenue " + gaulois.getNom() + " !");
 			nbGaulois++;
 		}
 		else {
-			System.out.println("Désolé " + gaulois.getNom() +
-					" mon village est déjà bien rempli.");
+			this.chef.parler("Désolé " + gaulois.getNom() + " mon village est déjà bien rempli.");
 		}
+	}
+	public void afficherVillageois() {
+		System.out.println("Le village de " + this.chef.getNom() + " est habité par :");
+		for (int i = 0 ; i < nbGaulois ; i++) {
+			System.out.println("- " + membres[i].getNom());
+		}
+	}
+	public void changerChef(Gaulois gaulois) {
+		this.chef.parler("Je laisse mon grand bouclier au grand " + gaulois.getNom() + ".");;
+		gaulois.parler("Merci !");
+		this.chef = gaulois;
 	}
 }
