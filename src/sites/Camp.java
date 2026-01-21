@@ -27,7 +27,7 @@ public class Camp {
 		}
 	}
 	public void afficherCamp() {
-		System.out.println("Le camp dirifé par " + this.commandant.getNom() + " contient les soldats :");
+		System.out.println("Le camp dirigé par " + this.commandant.getNom() + " contient les soldats :");
 		for (int i = 0 ; i < nbSoldats ; i++) {
 			System.out.println("- " + membres[i].getNom());
 		}
