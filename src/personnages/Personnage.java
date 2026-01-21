@@ -9,6 +9,9 @@ public abstract class Personnage {
 		this.force = force;
 	}
 	
+	public int getForce () {
+		return force;
+	}
 	public String getNom () {
 		return nom;
 	}
@@ -19,7 +22,7 @@ public abstract class Personnage {
 	protected abstract String donnerAuteur();
 	
 	public void frapper (Personnage cible) {
-		if (this.force > 0) {
+		if ((this.force > 0)&&(cible.getForce() > 0)) {
 			System.out.println(this.nom + " envoie un grand coup"
 					+ " dans la mâchoire de " + cible.getNom());
 			cible.recevoirCoup(this.force/3);
@@ -34,6 +37,9 @@ public abstract class Personnage {
 			this.force = 0;
 			this.parler("J'abandonne...");
 		}
+	}
+	public void boirePotion (int forcePotion) {
+		this.force = this.force * forcePotion;
 	}
 
 }
