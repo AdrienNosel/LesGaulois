@@ -31,9 +31,9 @@ public class TestGaulois {
 		minus.equipeSoldat(Equipement.PLASTRON);
 		System.out.println();
 		minus.parler("UN GAU... UN GAUGAU...");
-		asterix.frapper(minus);
-		minus.frapper(asterix);
-		asterix.frapper(minus);
-		minus.frapper(asterix);
+		while((asterix.getForce()>0) && (minus.getForce()>0)){
+			asterix.frapper(minus);
+			minus.frapper(asterix);
+		}
 	}
 }
