@@ -2,7 +2,7 @@ package personnages;
 
 public abstract class Personnage {
 	private String nom;
-	private int force;
+	protected int force;
 	
 	public Personnage (String nom, int force) {
 		this.nom = nom;
@@ -23,9 +23,9 @@ public abstract class Personnage {
 	
 	public void frapper (Personnage cible) {
 		if ((this.force > 0)&&(cible.getForce() > 0)) {
-			System.out.println(this.nom + " envoie un grand coup"
-					+ " dans la mâchoire de " + cible.getNom());
-			cible.recevoirCoup(this.force/3);
+			System.out.println(this.nom + " envoie un grand coup de force "
+					+ this.force + " dans la mâchoire de " + cible.getNom());
+			cible.recevoirCoup(this.force);
 		}
 	}
 	public void recevoirCoup (int coup) {

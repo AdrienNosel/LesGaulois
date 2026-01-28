@@ -4,6 +4,7 @@ package test_fonctionnel;
 import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Soldat;
+import personnages.Soldat.Equipement;
 import personnages.Soldat.Grade;
 
 public class TestGaulois {
@@ -23,7 +24,11 @@ public class TestGaulois {
 		panoramix.donnerPotion(assurancetourix);
 		panoramix.donnerPotion(abraracourcix);
 		panoramix.donnerPotion(agecanonnix);
-		
+		System.out.println();
+		minus.equipeSoldat(Equipement.BOUCLIER);
+		minus.equipeSoldat(Equipement.CASQUE);
+		minus.equipeSoldat(Equipement.CASQUE);
+		minus.equipeSoldat(Equipement.PLASTRON);
 		System.out.println();
 		minus.parler("UN GAU... UN GAUGAU...");
 		asterix.frapper(minus);
